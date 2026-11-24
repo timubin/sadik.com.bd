@@ -1,0 +1,56 @@
+export type Lang = 'en' | 'bn';
+
+const dictionary = {
+  en: {
+    searchPlaceholder: 'Search products, brands, SKU...',
+    shopNow: 'Shop Now',
+    featuredCategories: 'Featured Categories',
+    flashSale: 'Flash Sale',
+    newArrivals: 'New Arrivals',
+    bestSellers: 'Best Sellers',
+    addToCart: 'Add to Cart',
+    outOfStock: 'Out of Stock',
+    cart: 'Shopping Cart',
+    checkout: 'Proceed to Checkout',
+    subtotal: 'Subtotal',
+    deliveryInside: 'Inside Dhaka',
+    deliveryOutside: 'Outside Dhaka',
+    newsletterTitle: 'Join the Sadik Inner Circle',
+    newsletterDesc: 'Get early access to flash sales, new drops, and exclusive coupon codes.',
+    subscribe: 'Subscribe',
+    trackOrder: 'Track Order',
+    account: 'Account',
+    adminPanel: 'Admin Panel',
+    allProducts: 'All Products',
+    filters: 'Filters',
+    clearFilters: 'Clear All',
+  },
+  bn: {
+    searchPlaceholder: 'প্রোডাক্ট, ব্র্যান্ড বা SKU খুঁজুন...',
+    shopNow: 'এখনই কিনুন',
+    featuredCategories: 'জনপ্রিয় ক্যাটাগরি',
+    flashSale: 'ফ্ল্যাশ সেল',
+    newArrivals: 'নতুন কালেকশন',
+    bestSellers: 'সেরা বিক্রিত',
+    addToCart: 'কার্টে যোগ করুন',
+    outOfStock: 'স্টক শেষ',
+    cart: 'শপিং কার্ট',
+    checkout: 'চেকআউট করুন',
+    subtotal: 'মোট মূল্য',
+    deliveryInside: 'ঢাকার ভেতরে',
+    deliveryOutside: 'ঢাকার বাইরে',
+    newsletterTitle: 'সাদিক নিউজলেটারে যুক্ত হোন',
+    newsletterDesc: 'ফ্ল্যাশ সেল, নতুন প্রোডাক্ট ও স্পেশাল কুপন সবার আগে পেতে সাবস্ক্রাইব করুন।',
+    subscribe: 'সাবস্ক্রাইব',
+    trackOrder: 'অর্ডার ট্র্যাক',
+    account: 'অ্যাকাউন্ট',
+    adminPanel: 'অ্যাডমিন প্যানেল',
+    allProducts: 'সব প্রোডাক্ট',
+    filters: 'ফিল্টার',
+    clearFilters: 'সব মুছুন',
+  },
+} as const;
+
+export function t(lang: Lang, key: keyof typeof dictionary.en): string {
+  return dictionary[lang]?.[key] ?? dictionary.en[key];
+}
